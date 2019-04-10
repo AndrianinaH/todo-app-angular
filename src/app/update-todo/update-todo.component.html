@@ -1,0 +1,47 @@
+<div class="container">
+    <h5>{{title}}</h5>
+  
+    <form [formGroup]="todoForm" (ngSubmit)="updateTodo()">
+      <p>
+        <label for="tache">Nom de la tache</label>
+        <input type="hidden" [(ngModel)]="newTodo._id" formControlName="id" />
+        <input type="text" [(ngModel)]="newTodo.tache" id="tache" formControlName="tache" />
+      </p>
+      <p>
+        <label for="priorite">Priorité</label>
+        <select [(ngModel)]="newTodo.priorite" id="priorite" formControlName="priorite" materialize="material_select">
+          <option value="">choisissez une priorité</option>
+          <option *ngFor="let i of nbrPriorite" [value]="i">{{i}}</option>
+        </select>
+      </p>
+      <p>
+        <label for="datelimite">Date Limite</label>
+        <input type="date" [(ngModel)]="newTodo.datelimite" id="datelimite" formControlName="datelimite" />
+      </p>
+      <p>
+        <input class="btn yellow darken-1" type="submit" value="modifier" [disabled]="!todoForm.valid" />
+      </p>
+    </form>
+  
+    <br>
+    <!------ tache error -------->
+    <div *ngIf="todoForm.controls.tache.errors && (todoForm.controls.tache.dirty || todoForm.controls.tache.touched)">
+      <label class="red-text" [hidden]="!todoForm.controls.tache.errors.required">
+        Le champs Tache est vide
+      </label>
+    </div>
+     <!------ priorite error -------->
+     <div *ngIf="todoForm.controls.priorite.errors && (todoForm.controls.tache.dirty || todoForm.controls.priorite.touched)">
+        <label class="red-text" [hidden]="!todoForm.controls.priorite.errors.required">
+          Le champs Priorité est vide
+        </label>
+      </div>
+    <!------ tache error -------->
+    <div *ngIf="todoForm.controls.datelimite.errors && (todoForm.controls.datelimite.dirty || todoForm.controls.datelimite.touched)">
+      <label class="red-text" [hidden]="!todoForm.controls.datelimite.errors.required">
+        Le champs Date Limite est vide
+      </label>
+    </div>
+  
+  </div>
+  

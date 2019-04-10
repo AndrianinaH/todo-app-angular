@@ -1,0 +1,28 @@
+<div class="container">
+  <h5>{{title}}</h5>
+  <table class="highlight centered responsive-table">
+    <thead>
+      <tr>
+        <th>Tache</th>
+        <th>date limite</th>
+        <th>priorité</th>
+        <th>supprimer</th>
+      </tr>
+    </thead>
+    <tbody id="liste">
+      <tr class="task" *ngFor="let todo of allTodo">
+        <td>
+          <a routerLink="/todo/{{todo._id}}">{{todo.tache}}</a>
+        </td>
+        <td>{{todo.datelimite}}</td>
+        <td>{{todo.priorite}}</td>
+        <td>
+          <button class="red btn-floating" (click)="deleteTask(todo)"><i class="material-icons">delete</i></button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+  <br>
+  <a class="btn green" href="#">Export CSV</a>
+</div>

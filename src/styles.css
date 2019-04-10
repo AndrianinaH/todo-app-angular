@@ -1,1 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*---------------------------------- menu principale ----------------------*/
+/*-------- menu desktop */
+nav .brand-logo{
+    color:#1565c0 !important; 
+}
+
+nav .brand-logo span{
+    font-size: 20px !important;
+}
+.nav-wrapper ul li a,.nav-wrapper a{
+    color:#1565c0;
+}
+.nav-wrapper ul li a:hover{
+    color:#FFF;
+    background-color:#1565c0;
+}
+/*-------- fin menu desktop */
+
+.side-nav{
+    background-color:#1565c0 !important;
+}
+.side-nav li a{
+    color:#fff !important;
+    background-color:#1565c0 !important;
+    text-align: center;
+}
+.side-nav li a:hover{
+    color:#1565c0 !important;
+    background-color:#fff !important;
+}
+.background{
+    margin-bottom:-20px;
+}
+/*-------- fin side-nav mobile */
+
+/*----------------------------------- fin menu principale -------------------*/
+
+
+/*----------------------------------- contenu  ------------------------------*/
+body{
+    background-color: #e3f2fd;
+}
+strong{
+    font-weight: bold !important;
+}
+/* -------- titre style pour référencement -------- */
+.my-divider h2{
+    font-size: 1.64rem !important;
+    line-height: 110% !important;
+    margin: .82rem 0 .656rem 0 !important;
+}
+
+/* -------- fin titre style pour référencement --- */
+
+
+
+
